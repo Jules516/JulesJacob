@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="temp1.css">
+<link rel="stylesheet" href="temp1.css" type="text/css">
+ <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            
+            <div class="links">    
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index1.html">Square root</a></li>
+                    <li><a href="index2.html">Temperature</a></li>
+                    <li><a href="index3.html">Area of Triangle</a></li>
+                    
+                
+                
+                
+                </ul>
+            </div>    
+        </nav>
+        
+<div class="container">
+<form id="tempCalc" onsubmit="calculateTemp(); return false">
+   <label for="temp">Please enter the temperature you'd like to convert.</label> <br>
+   <input name="temp" id="temp" type="number"> 
+   <select name="temp_diff" id="temp_diff">
+      <option value="1">°Celsius</option>
+      <option value="2">°Fahrenheit</option>
+   </select> <br>
+   <input name="temp" type="submit"> <br>
+   <span id="resultContainer"></span>
+</form>
+</div>
+<script type="text/javascript">
+		
+function calculateTemp() {
+   function celToFah(celsius) {
+      var fahrenheit = Math.round((celsius * (9/5)) + 32);
+      return fahrenheit;
+   }
+
+   function fahToCel(fahrenheit) {
+      var celsius = Math.round((fahrenheit - 32) * (5/9));
+      return celsius;
+   }
+
+
+   var tempSelected = document.getElementById("temp_diff");
+   var valueTemp = tempSelected.options[tempSelected.selectedIndex].value;
+
+ 
+   var numberTemp = document.getElementById("temp").value;
+
+   var result;
+   
+   if (valueTemp == 1) {
+      result = celToFah(numberTemp);
+      document.getElementById("resultContainer").innerHTML = "= " + result + "°Fahrenheit";
+   } else {
+      result = fahToCel(numberTemp);
+      document.getElementById("resultContainer").innerHTML = "= " + result + "°Celsius";
+   }
+   
+}
+		
+	</script>

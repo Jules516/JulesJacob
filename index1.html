@@ -1,0 +1,39 @@
+<html>
+<body>
+ <link rel="stylesheet" href="design.css">
+<link rel="stylesheet" type="text/css" href="squareroot2.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            
+            <div class="links">    
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index1.html">Square root</a></li>
+                    <li><a href="index2.html">Temperature</a></li>
+                    <li><a href="index3.html">Area of Triangle</a></li>
+                    
+                
+                
+                
+                </ul>
+            </div>    
+        </nav>
+        
+<div class="container">
+<h1> Square Root  </h1>
+	<input type = "number" id="TypeNumber" value = "1">
+	<button onclick="myfunction()">Enter</button>
+	
+	<p id="square"></p>
+	<script>
+	function myfunction(){
+		var x = document.getElementById("TypeNumber").value;
+		document.getElementById("square").innerHTML = Math.sqrt(x);
+	}
+	</script>
+</div>
+	</body>
+</html>
+    
